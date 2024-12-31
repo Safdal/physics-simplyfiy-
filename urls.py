@@ -1,15 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from blog import views  # Import your app views
+from blog import views  # Replace 'blog' with your app's name
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.post_list, name='post_list'),  # Add your app's view
+    path('admin/', admin.site.urls),  # Admin page
+    path('', views.post_list, name='post_list'),  # Default route for your app
 ]
-from django.urls import path
-from . import views
 
-urlpatterns = [
-    path('', views.post_list, name='post_list'),
-    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
-]
